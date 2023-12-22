@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            
+            /* background-color:  rgba(121, 205, 185, 0.5); */
+        }
+        .container{
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0,0,0,0.7);
+            position: relative;
+        }
+        .nav{
+            display: flex;
+           padding: 3px;
+           justify-content: center;
+           margin-right: 26px;
+        }
+        .home{
+            width: 50px;
+            margin: 5px;
+            text-align: center;
+            padding: 10px;
+            margin-top: -19px;
+            background-color: rgba(121, 205, 185, 0.8);
+            border-top-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            animation: name 1s infinite;
+        }
+        @keyframes name{
+            0%{
+                border-top-left-radius: 0;
+                border-top-right-radius: 60px;
+                border: 1px solid blue;
+            }
+            25%{
+                border-top-right-radius: 60px;
+                border-bottom-right-radius: 30px;
+                border:1px solid chocolate;
+            }
+            50%{
+                border-bottom-right-radius: 30px;
+                border-bottom-left-radius: 60px;
+                border:1px solid chartreuse;
+            }
+            75%{
+                border-bottom-left-radius: 60px;
+                border-top-left-radius: 0;
+                border:1px solid darkgoldenrod;
+            }
+            100%{
+                border-top-left-radius: 0;
+                border-top-right-radius: 60px;
+                border:1px solid pink;
+            }
+        }
+        .home a{
+            text-decoration: none;
+            color: white;
+        }
+        .menu{
+           color: rgb(0, 183, 255);
+           padding: 10px;
+           position: relative;
+           display: inline-block;
+        }
+        .menu ul{
+            width: 100px;
+            background-color: aquamarine;
+            margin: 10px;
+            position: absolute;
+            display: none;
+            z-index: 1;
+        }
+        .menu ul li{
+            padding: 5px;
+           
+        }
+        .menu:hover .menu ul li{
+            display: block;
+        }
+        .reg{
+           text-align: right;
+        }
+        .reg h3{
+           margin-top: -45px;
+           margin-right:10px ;
+           color: white;
+        }
+        .reg i{
+            margin: 4px;
+            color: cyan;
+        }
+        .cart{
+            text-align: right;
+        }
+        .cart h3{
+            margin-top: -45px;
+           margin-right:115px ;
+           color: white;
+        }
+        .cart i{
+            margin: 4px;
+            color: cyan;
+        }
+        .header{
+           margin: 0;
+        }
+        .header img{
+            width: 100%;
+            height: 350px;
+            background-size: cover;
+        }
+        .icon{
+            margin-top:-190px;
+            color: white;
+            flex-wrap: wrap;
+            font-size: 30px;
+            color: rgba(121, 205, 185, 0.5);
+        }
+        .icon i{
+           margin: 5px;
+        }
+        .right{
+            text-align: right;
+            margin-top: -40px;
+          
+        }
+        .icon i:hover{
+            color:  rgba(121, 205, 185, 0.9);
+            cursor: pointer;
+        }
+        .midium{
+            width: 100%;
+            height: auto;
+            margin-top: 160px;
+            background:rgba(100,20,39,0.4) ;
+            overflow: hidden;
+        }
+        .front{
+            width: 35%;
+            
+             margin-left: 32%;
+            justify-content: center;
+           text-align: center;
+          border: 2px solid rgb(210, 207, 207);
+           
+            box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.7);
+            animation: products 2s infinite linear;
+        }
+        @keyframes products{
+            0%{
+                border-top-color: blueviolet;
+                border-right-color: blueviolet;
+            }
+            /* 50%{
+                border-right-color:blueviolet;
+                border-bottom-color:blueviolet;
+            } */
+            100%{
+                border-bottom-color:blueviolet;
+                border-left-color:blueviolet;
+            }
+        }
+        .front h2{
+            color: chocolate;
+        }
+        .product{
+            margin: 1.5%;
+            padding: 1.7%;
+            
+        }
+        .product ul{
+            list-style-type: none;
+            display: flex;
+            
+        }
+        .product ul li{
+         margin-left:-55px; 
+            background-color: white;  
+            
+        }
+        .product ul li img{
+            list-style-type: none;
+            width:calc(150% - 80%);
+           height: 55%;
+           margin: 5%;
+           box-shadow: 0px 0px 10px 10px rgba(0,0,0, 0.5);
+        }
+        .product ul li img:hover{
+           transform: scale(.98);
+        }
+        .product span{
+            margin-left: 8%;
+        }
+        .product h3{
+            width: 70px;
+            text-align: center;
+            padding: 5px;
+            border-radius: 30px;
+            background:rgba(5, 20,0, 0.8);
+            color: white;
+            margin-top: 40px;
+            margin-left: 5px;
+        }
+        .product h3:hover{
+            cursor: pointer;
+            background-color: darkcyan;
+            color: black;
+        }
+        .product p{
+            margin-left: 15px;
+           color: black;
+           width: 230px;
+        }
+        .rating{
+            float: right;
+             margin-top: -8px;
+            font-weight: bold;
+            margin-right: 31%;
+        }
+        .rating i{
+            color: rgba(231, 155, 12, 0.9);
+        }
+        .slide{
+            display: flex;
+        }
+        .slide img{
+            width: 94%;  
+            height: 110%;
+           
+            margin: 10px;         
+        }
+        .categories{
+            margin: 10px;
+           
+        }
+        .categories h2{
+            text-align: center;
+            margin-top: 80px;
+           width: 35%;
+           padding: 10px;
+           margin-left: 32%;
+            box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.7);
+        }
+        .catname{
+            display:flex;
+        }
+        .catname img{
+            width: 95%;
+            height: 70%;
+           margin:5px;
+        }
+        .slidingnumber{
+            display: flex;
+            margin-left: 30%;
+        }
+        .slidingnumber i{
+            margin: 10px;
+           
+        }
+        .slidingnumber i:hover{
+            color: white;
+            cursor: pointer;
+        }
+        .num{
+            margin: 10px;
+          
+        }
+        .footer{
+            margin: 10px;
+        }
+        .about h4{
+            color: rgb(94, 93, 93);
+            margin-top: 45px;
+        }
+        .about ul{
+            margin-top: -1%;
+            /* margin-left: -5%; */
+        }
+        .about ul li{
+            list-style-type: none;
+        }
+        .about ul li a{
+            text-decoration: none;
+           
+        }
+        .help{
+            margin-top: -200px;
+            margin-left: -25%;
+        }
+        .help h4{
+            text-align: center;
+            color: rgb(107, 106, 106);
+        }
+        .help ul{
+            text-align: center;
+            list-style-type: none;
+            margin-top: -8px;
+            /* margin-left: -5%; */
+        }
+        .help ul li{
+            text-align: left;
+            margin-left: 48%;
+        }
+        .help ul li a{
+            text-decoration: none;
+        }
+        .consumer{
+            margin-top: -145px;
+            
+        }
+        .consumer h4{
+            text-align: right;
+            color: rgb(107, 105, 105);
+            margin-right: 9%;
+        }
+        .consumer ul{
+            text-align: right;
+            list-style-type: none;
+            margin-top: -1%;
+            /* margin-left: -20%; */
+        }
+        .consumer ul li{
+            text-align: left;
+           margin-left: 74%;
+        }
+        .consumer ul li a{
+            text-decoration: none;
+        }
+        .social{
+            margin-top: 50px;
+        }
+        .social h4{
+            color: rgb(94, 92, 92);
+        }
+        .social ul{
+            list-style-type: none;
+        }
+        .social ul li a{
+            text-decoration: none;
+        }
+        .outerline{
+            margin: 1%;
+            display: flex;
+            padding: -0.5%;
+        }
+        .helping{
+            margin: 1px;
+            padding:5px;
+            margin-left: 5%;
+        }
+        .helping i{
+            color: chocolate;
+            margin-left: -54%;
+        }
+        .helping img{
+            width: 85%;
+            height: 30px;
+           margin-left: 20%;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu"><i class="material-icons">menu</i>
+            <ul>
+                <li>Ashish</li>
+                <li>ashish</li>
+                <li>Ashish</li>
+                <li>Ashish</li>
+                <li>Ashish</li>
+            </ul>
+        </div>
+        <div class="nav">
+           
+            <div class="home"><a href="">home</a></div>
+            <div class="home"><a href="">contact</a></div>
+            <div class="home"><a href="">inquiry</a></div>
+            <div class="home"><a href="">status</a></div>
+            <div class="home"><a href="">role</a></div>
+        </div>
+        <div class="cart">
+            <h3><i class="fa-solid fa-cart-shopping"></i>Cart</h3>
+        </div>
+        <div class="reg">
+            <h3><i class="fa fa-user-circle"></i>Profile</h3>
+        </div>
+    </div>
+   <!-- header section -->
+   <div class="header">
+        <img src="watch.jpeg" alt="">
+        <div class="icon">
+        <i class="fa-solid fa-arrow-left"></i>
+        <div class="right">
+        <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        </div>
+   </div>
+   <!-- Medium section -->
+   
+   <div class="midium">
+    <div class="front"><h2>Products</h2></div>
+    <div class="product">
+         <ul>
+            <li><img src="watch1.jpeg" alt="">
+                <span><b>Sonata</b> Men's watches</span>
+               <p><i class="fa-solid fa-indian-rupee-sign"></i>1000</p>
+               <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i></span>
+                <h3>BUY</h3>
+            </li>
+            <li><img src="watch2.webp" alt="">
+                <span>Sonata s1</span>
+               <p><i class="fa-solid fa-indian-rupee-sign"></i>900</p>
+               <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i></span>
+                <h3>BUY</h3>
+            </li>
+            <li><img src="watch3.jpeg" alt="">
+                <span>Sonata s1</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1200</p>
+                <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i></span>
+                    <h3>BUY</h3>
+            </li>
+            <li><img src="watch11.webp" alt="">
+                <span>Sonata s1</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1200</p>
+                <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i></span>
+                    <h3>BUY</h3>
+            </li>
+            
+         </ul>
+         <ul>
+            <li><img src="watch4.webp" alt=""><span>Sonata s1</span>
+               <p><i class="fa-solid fa-indian-rupee-sign"></i>1500</p>
+               <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i></span>
+                <h3>BUY</h3>
+            </li>
+            <li><img src="watch5.webp" alt=""><span>Sonata s1</span>
+               <p><i class="fa-solid fa-indian-rupee-sign"></i>500</p>
+               <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i></span>
+                <h3>BUY</h3>
+            </li>
+            <li><img src="watch6.jpeg" alt=""><span>Sonata s1</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>700</p>
+                <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i></span>
+                    <h3>BUY</h3>
+            </li>
+            <li><img src="watch16.jpeg" alt="">
+                <span>Sonata s1</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1200</p>
+                <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i></span>
+                    <h3>BUY</h3>
+            </li>
+         </ul>
+         <ul>
+            <li><img src="watch7.webp" alt="">
+               <span>Sonata s1</span>
+               <p><i class="fa-solid fa-indian-rupee-sign"></i>2000</p>
+               <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i></span>
+                <h3>BUY</h3>
+            </li>
+            <li><img src="watch8.webp" alt="">
+                <span>Sonata s1</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>2600</p>
+                <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i></span>
+                    <h3>BUY</h3>
+            </li>
+            <li><img src="watch9.jpeg" alt="">
+                <span>Sonata s1</span>
+               <p><i class="fa-solid fa-indian-rupee-sign"></i>1600</p> 
+               <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star-half-stroke"></i></span>
+                <h3>BUY</h3>
+            </li>
+            <li><img src="watch10.jpeg" alt="">
+                <span>Sonata s1</span>
+                <p><i class="fa-solid fa-indian-rupee-sign"></i>1200</p>
+                <span class="rating">rating:<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i></span>
+                    <h3>BUY</h3>
+            </li>
+         </ul>
+    </div>
+    <div class="slide">
+        <div><img src="watch11.webp" alt=""></div>
+        <div><img src="watch12.jpeg" alt=""></div>
+        <div><img src="watch13.webp" alt=""></div>
+        <div><img src="watch14.jpeg" alt=""></div>
+    </div>
+    <div class="categories" >
+       <h2>categories</h2>
+       <div class="catname">
+         <div ><img src="watch15.jpeg" alt="">
+            <p>Sonata f17</p>
+            
+        </div>
+         <div><img src="watch16.jpeg" alt="">
+            <p>Sonata f17</p>
+        </div>
+         <div><img src="watch4.webp" alt="">
+            <p>Sonata f17</p>
+        </div>
+         <div><img src="watch4.webp" alt="">
+            <p>Sonata f17</p>
+        </div>
+       </div>
+    </div>
+    <div class="slidingnumber">
+        <div><i class="fa-solid fa-less-than"></i></div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">....</div>
+        <div><i class="fa-solid fa-greater-than"></i></div>
+    </div>
+   </div>
+  <!-- footer section -->
+  <div class="footer">
+    <div class="about">
+        <h4>ABOUT</h4>
+        <ul>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Stories</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Wholesale</a></li>
+            <li><a href="#">Cleartrip</a></li>
+            <li><a href="#">Corporate information</a></li>
+        </ul>
+    </div>
+    <div class="help">
+        <h4>HELP</h4>
+        <ul>
+            <li><a href="#">Payment</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Cancellation and returns</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Report information</a></li>
+        </ul>
+    </div>
+    <div class="consumer">
+        <h4>CONSUMER POLICY</h4>
+        <ul>
+            <li><a href="#">Cancellation and returns</a></li>
+            <li><a href="#">Term of use</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Sitemap</a></li>
+            <li><a href="#">Grievance Readressal</a></li>
+            <li><a href="#">ERP comliliance</a></li>
+        </ul>
+    </div>
+    <div class="social">
+        <h4>SOCIAL</h4>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div class="outerline">
+        <div class="helping"><i class="fa-solid fa-meteor"></i>Advertise</div>
+        <div class="helping"><i class="fa-solid fa-gift"></i>Gift Cards</div>
+        <div class="helping"><i class="fa-regular fa-circle-question"></i>Help Center</div>
+        <div class="helping"><img src="payment section.png" alt=""></div>
+    </div>
+  </div>
+</body>
+</html>
